@@ -3,12 +3,16 @@
 
 module Kana2hepburn
 
-  def k2h_hatsuon(str)          # 撥音(っ)の変換
+  def k2h_hatsuon(str)          # 促音(っ)の変換
     return str unless str.include?('っ')
     
     while /っ(.)/.match(str)
       ch = Regexp.last_match(1)
-      str.sub!(/っ#{ch}/, "#{ch}#{ch}")
+      if ch == 'C'
+        str.sub!(/っ#{ch}/, "T#{ch}")
+      else
+        str.sub!(/っ#{ch}/, "#{ch}#{ch}")
+      end
     end
     str
   end

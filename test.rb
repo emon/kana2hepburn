@@ -17,3 +17,5 @@ p 'きょうと'.kana2hepburn
 p 'きょおと'.kana2hepburn
 p 'とおる'.kana2hepburn
 p 'さいとう'.kana2hepburn
+p 'はっとり'.kana2hepburn
+p 'ほっち'.kana2hepburn
