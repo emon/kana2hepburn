@@ -18,15 +18,15 @@ module Kana2hepburn
   end
 
   def k2h_correct_n(str)        # 'ん' を m で表記する修正
-    str.tr!('NB', 'MB')
-    str.tr!('NM', 'MM')
-    str.tr!('NP', 'MP')
+    str.gsub!('NB', 'MB')
+    str.gsub!('NM', 'MM')
+    str.gsub!('NP', 'MP')
     str
   end
 
   def k2h_correct_long(str)     # 長音('お' や 'う')の修正
-    str.gsub!("OO", "O")
-    str.gsub!(/([AIUEO])U/, $1) if /([AIUEO])U/.match(str)
+    str.gsub!(/O[OU]/, "O")
+    str.gsub!("UU", "U")
     str
   end
 
